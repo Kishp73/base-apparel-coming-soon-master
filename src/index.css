@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,300&display=swap');
+
+:root{
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+    /* 
+    --Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+    --Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%); 
+    */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{width: 100vw;}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.wrap_all{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    width: 100%;
+    
+}
+
+.icon_container{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding: 32px;
+}
+
+.image_container{
+    width: 100%;
+    height: 250px;
+    margin-bottom: 62px;
+}
+
+.image_mobile{
+    display: block;
+    width: 100%;
+}
+
+.image_desktop{
+    display: none;
+}
+
+.content_container{
+    width: 100%;
+}
+
+.title_style{
+    padding: 0 80px 0;
+    margin-bottom: 25px;
+
+    color: var(--Dark-Grayish-Red);
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.title_style span{
+    color: var(--Desaturated-Red);
+    font-weight: 300;
+}
+
+.paragraph_style{
+margin-bottom: 40px;
+
+    color: var(--Desaturated-Red);
+    font-weight: 400;
+    text-align: center;
+    padding: 0 40px 0;
+}
+
+.form_style{
+    margin-bottom: 80px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs_container{
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_style{
+    width: 310px;
+    height: 48px;
+    margin-right: -65px;
+    padding: 0 25px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 30px;
+    outline: 0;
+
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.input_style::placeholder{
+    color: var(--Soft-Red);
+}
+
+.button_style{
+
+    width: 65px;
+    height: 48px;
+    border: 1px solid hsl(0, 80%, 86%);
+    border-radius: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+
+    background-image: url(../images/icon-arrow.svg), linear-gradient(135deg, hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button_style:hover{
+    transform: scale(1.1);
+}
+
+.email_valid{
+    visibility: hidden;
+    margin-top: 10px;
+    color: var(--Soft-Red);
+}
+
+.invalidemail{
+    padding-right: 80px;
+    background-image: url(../images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-origin: content-box;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 800px) {
+    .wrap_all{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+        'header image'
+        'content_container image';
+    }
+
+    .image_container{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        
+        grid-area: image;
+    }
+
+    .content_container{
+        width: 100%;
+        max-width: 440px;
+        padding-right: 25px;
+
+        grid-area: content_container;
+    }
+
+    .image_mobile{
+        display: none;
+    }
+
+    .image_desktop{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+ 
+    header{
+        width: 100%;
+        max-width: 440px;
+        grid-area: header;
+    }
+
+    .title_style{
+        font-size: 4rem;
+        padding-left: 0;
+        margin-left: 40px;
+        text-align: left;
+        max-width: 440px;
+    }
+
+    .paragraph_style{
+        line-height: 1.5;
+        padding-right: 0;
+        font-size: 1rem;
+        max-width: 440px;
+        text-align: left;
+    }
+
+    .form_style{
+        margin-left: 40px;
+
+    }
+
+    .inputs_container{
+        width: 100%;
+        max-width: 500px;
+        justify-content: flex-start;
+    }
+
+    .input_style{
+        width: 100%;
+    }
+
+}
